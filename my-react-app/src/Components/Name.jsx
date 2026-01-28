@@ -6,7 +6,7 @@ const Name = () => {
   return (
     <div>
       <h1>My Name Is {name}</h1>
-      <Link to="/">Go to Hone</Link>
+      <Link to="/">Go to Home</Link>
     </div>
   );
 };
