@@ -12,6 +12,7 @@ const UsersInfo = () => {
         `https://jsonplaceholder.typicode.com/users/${id}`,
       );
       const userData = await response.json();
+
       setUser(userData);
     };
     fetchUser();
@@ -28,15 +29,56 @@ const UsersInfo = () => {
             <span>Name:</span> {User.name}
           </p>
           <p>
-            <span>Email:</span> {User.email}
+            <span>username:</span> {User.username}
           </p>
           <p>
-            <span>Phone:</span> {User.phone}
+            <span>Email</span> {User.email}
+          </p>
+          {User.address && (
+            <>
+              <p>
+                <span>street:</span> {User.address.street}
+              </p>
+              <p>
+                <span>suite:</span> {User.address.suite}
+              </p>
+              <p>
+                <span>city:</span> {User.address.city}
+              </p>
+              <p>
+                <span>zipcode:</span> {User.address.zipcode}
+              </p>
+            </>
+          )}
+          {User.address.geo && (
+            <>
+              <p>
+                <span>lat:</span> {User.address.geo.lat}
+              </p>
+              <p>
+                <span>lng:</span> {User.address.geo.lng}
+              </p>
+            </>
+          )}
+          <p>
+            <span>phone:</span> {User.phone}
           </p>
           <p>
-            <span>Website:</span> {User.website}
+            <span>website:</span> {User.website}
           </p>
-
+          {User.company && (
+            <>
+              <p>
+                <span>company's name:</span> {User.company.name}
+              </p>
+              <p>
+                <span>catchphrase:</span> {User.company.catchPhrase}
+              </p>
+              <p>
+                <span>bs:</span> {User.company.bs}
+              </p>
+            </>
+          )}
           <Link className="back-link" to="/users">
             Back to Users List
           </Link>
