@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Like from "./Components/Like";
-
+import Stock from "./Components/Stock";
 function App() {
   const [input, setInput] = React.useState("");
   const [list, setList] = React.useState([]);
 
   return (
     <div>
+      <Stock />
       <Like />
       <input
         type="text"

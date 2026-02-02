@@ -6,7 +6,7 @@ function Like() {
 
   const handleClick = () => {
     setLiked(true);
-    setCount(count + 1);
+    setCount(count ? 0 : +1);
   };
 
   return (
