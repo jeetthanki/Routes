@@ -1,29 +1,17 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Like from "./Components/Like";
-import Stock from "./Components/Stock";
+import Search from "./Components/Search";
+import Profile from "./Components/Profile";
+import Form from "./Components/Form";
 function App() {
-  const [input, setInput] = React.useState("");
-  const [list, setList] = React.useState([]);
-
   return (
-    <div>
-      <Stock />
-      <Like />
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-
-      <button onClick={() => setList([...list, input])}>POST</button>
-
-      <ul>
-        {list.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/form" element={<Form />} />
+        <Route path="/" element={<Search />} />
+        <Route path="/user/:username" element={<Profile />} />
+      </Routes>
+    </Router>
   );
 }
 

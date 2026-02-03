@@ -32,12 +32,14 @@ const Stock = () => {
   return (
     <div>
       <h3>Stock Management</h3>
-      <input className="input"
+      <input
+        className="input"
         placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <input className="input"
+      <input
+        className="input"
         type="number"
         placeholder="qty"
         value={qty}
