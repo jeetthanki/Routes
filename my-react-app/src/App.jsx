@@ -1,15 +1,13 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Search from "./Components/Search";
-import Profile from "./Components/Profile";
 import Form from "./Components/Form";
+import Post from "./Components/Post";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/form" element={<Form />} />
-        <Route path="/" element={<Search />} />
-        <Route path="/user/:username" element={<Profile />} />
+        <Route path="/" element={<Post />} />
       </Routes>
     </Router>
   );

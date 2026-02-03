@@ -17,7 +17,7 @@ const Stock = () => {
     setName("");
     setQty("");
   };
-  const updateQty = (id, value) => {
+  const updateItem = (id, value) => {
     setItems(
       items.map((item) =>
         item.id === id ? { ...item, qty: item.qty + value } : item,
@@ -50,8 +50,8 @@ const Stock = () => {
         {items.map((item) => (
           <li key={item.id}>
             {item.name} {item.qty}
-            <button onClick={() => updateQty(item.id, 1)}>Add</button>
-            <button onClick={() => updateQty(item.id, -1)}>Remove</button>
+            <button onClick={() => updateItem(item.id, 1)}>Add</button>
+            <button onClick={() => updateItem(item.id, -1)}>Remove</button>
             <button onClick={() => deleteItems(item.id)}>Delete</button>
           </li>
         ))}
