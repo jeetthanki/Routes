@@ -25,12 +25,12 @@ function Profile() {
       });
   }, [username]);
 
-  if (loading) return <h3>Searching...</h3>;
-  if (error) return <h3>User Not Found </h3>;
+  if (loading) return <h2>Searching...</h2>;
+  if (error) return <h2>User Not Found </h2>;
 
   return (
     <div className="container">
-      <img src={user.avatar_url} width="150" />
+      <img src={user.avatar_url} width="100" />
       <h2>{user.name}</h2>
       <p>{user.bio}</p>
       <p>Followers: {user.followers}</p>
