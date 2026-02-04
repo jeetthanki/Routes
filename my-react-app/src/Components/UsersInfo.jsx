@@ -13,6 +13,8 @@ const UsersInfo = () => {
       );
       const userData = await response.json();
 
+      console.log(userData);
+
       setUser(userData);
     };
     fetchUser();

@@ -1,12 +1,15 @@
 import React from "react";
 
 const Post = () => {
-  const [like, SetLike] = React.useState("grey");
+  const [like, SetLike] = React.useState(0);
+  const [likeColor, SetLikeColor] = React.useState("grey");
   const [comment, SetComment] = React.useState("");
   const [input, SetInput] = React.useState("");
 
   const onToggle = () => {
-    SetLike(like === "grey" ? "red" : "grey");
+    SetLikeColor(likeColor === "grey" ? "red" : "grey");
+
+    SetLike(like === 0 ? 1 : 0);
   };
   const onClick = () => {
     SetComment(input);
@@ -15,7 +18,7 @@ const Post = () => {
   return (
     <>
       <div>
-        <button onClick={onToggle} style={{ color: like }}>
+        <button onClick={onToggle} style={{ color: likeColor }}>
           ♡
         </button>
       </div>
