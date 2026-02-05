@@ -6,7 +6,8 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
-  useEffect(() => {
+ 
+ useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/users",
@@ -14,7 +15,6 @@ const Users = () => {
       const data = await response.json();
       setUsers(data);
     };
-
     fetchUsers();
   }, []);
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import Dashboard from "./Components/dashboard";
+import Netflix from "./Components/Netflix";
 function App() {
   const [theme, setTheme] = React.useState("light");
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
           path="/dashboard"
           element={<Dashboard theme={theme} toggleTheme={toggleTheme} />}
         />
+        <Route path="/Netflix" element={<Netflix />} />
       </Routes>
     </Router>
   );
