@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-
+import "../Styles/Netflix.css";
 const Netflix = () => {
   const [shows, setShows] = React.useState([]);
 
@@ -15,12 +15,14 @@ const Netflix = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {shows &&
         shows.map((show) => (
-          <div key={show.id}>
-            <p>{show.name}</p>
+          <div className="card" key={show.id}>
             <img src={show.image.medium} alt={show.name} />
+            <p>{show.name}</p>
+            <p>Rating: {show.rating.average}</p>
+            <button>Add To WatchList</button>
           </div>
         ))}
     </div>
