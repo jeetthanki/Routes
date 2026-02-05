@@ -17,8 +17,12 @@ const Netflix = () => {
   return (
     <div>
       {shows &&
-        shows.map((show) => <img src={show.image.medium} alt={shows.name} />)}
-      <p>{shows.name}</p>
+        shows.map((show) => (
+          <div key={show.id}>
+            <p>{show.name}</p>
+            <img src={show.image.medium} alt={show.name} />
+          </div>
+        ))}
     </div>
   );
 };
