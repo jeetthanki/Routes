@@ -3,8 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import Dashboard from "./Components/dashboard";
 import Netflix from "./Components/Netflix";
-import { Navbar } from "./Components/Navbar";
-import Watchlist from "./Components/Watchlist";
+
 function App() {
   const [theme, setTheme] = React.useState("light");
   useEffect(() => {
@@ -15,7 +14,7 @@ function App() {
   };
   return (
     <Router>
-      <Navbar />
+      
       <Routes>
         <Route
           path="/login"
@@ -27,7 +26,6 @@ function App() {
         />
         <Route path="/Netflix" element={<Netflix />} />
         <Route path="/Watchlist" element={<Watchlist />} />
-
       </Routes>
     </Router>
   );
